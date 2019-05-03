@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- <div id="box"></div> -->
+    
+</body>
+<script>
+    // Basic starter example
+    // TweenMax.set("#box", {xPercent: -50, yPercent: -50});
+
+    // document.addEventListener("click", function(e) {
+    //     const clientX = event.clientX;
+    //     const clientY = event.clientY;
+    //     TweenMax.to("#box", 1, {x: clientX , y: clientY});
+    // })
+
+    // Rotate elements
+    // TweenMax.set("#box", {
+    //     backgroundColor: "green",
+    //     width: "50px",
+    //     height: "50px",
+    //     x: "50px",
+    //     y: "50px"
+    // })
+
+    // document.addEventListener("click", function(){
+    //     TweenMax.to("#box", 0.5, {
+    //         rotation: "+=30"
+    //     })
+    // })
+
+    // Animation steps with Timeline
+    //  TweenMax.set("#box", {
+    //     backgroundColor: "green",
+    //     width: "50px",
+    //     height: "50px",
+    //     x: "50px",
+    //     y: "50px"
+    // })
+
+    // const timeline = new TimelineMax({ repeat: -1});
+
+    // timeline.pause();
+
+    // timeline.to("#box", 0.5, {x: 100});
+    // timeline.to("#box", 0.5, {y: 100});
+    // timeline.to("#box", 0.5, {x: 50});
+    // timeline.to("#box", 0.5, {y: 50});
+
+    // document
+    //     .querySelector("#box")
+    //     .addEventListener("click", function(){
+    //         if(timeline.isActive()){
+    //             timeline.pause();
+    //         } else{
+    //             timeline.resume();
+    //         }
+    //     })
+
+    // From and fromTo
+    // TweenMax.set("#box", {
+    //     backgroundColor: "green",
+    //     width: "50px",
+    //     height: "50px",
+    //     x: "50px",
+    //     y: "50px"
+    // })
+
+    // document.addEventListener("click", function(event){
+    //     const x = event.x;
+    //     const y = event.y;
+    //     // TweenMax.from("#box", 1, {x, y})
+    //     TweenMax.fromTo("#box", 1, {x, y}, {x: 500, y: 500})
+    // })
+
+    // Animating array of elements
+    // const divs = Array.from({length: 100}, function(){
+    //     return document.createElement("div");
+    // })
+
+    // divs.forEach(function(div){
+    //     TweenMax.set(div, {
+    //         position: "absolute",
+    //         x: Math.random() * window.innerWidth + "px",
+    //         y: Math.random() * window.innerHeight + "px",
+    //         width: 20,
+    //         height: 20,
+    //         backgroundColor: "green",
+    //         border: "3px solid black"
+    //     })
+
+    //     document.body.appendChild(div)
+    // })
+    
+    // TweenMax.to(divs, 10, {x: 100, y:100});
+
+    // document.addEventListener("click", function(event){
+    //     TweenMax.killAll(true)
+    // })
+
+    // Animate between css classes
+    // const box = document.createElement("div");
+    // box.classList.add("box");
+    // document.body.appendChild(box);
+
+    // box.addEventListener("mouseover", function(){
+    //     TweenMax.to(box, .25, {className: "+=hover"})
+    // })
+
+    // box.addEventListener("mouseout", function(){
+    //     TweenMax.to(box, .25, {className: "-=hover"})
+    // })
+
+    // box.addEventListener("mousedown", function(){
+    //     TweenMax.to(box, .25, {className: "+=down"})
+    // })
+
+    // box.addEventListener("mouseup", function(){
+    //     TweenMax.to(box, .25, {className: "-=down"})
+    // })
+
+    // Spin elements in 3d
+    // const box = document.createElement("div");
+    // box.classList.add("box");
+    // document.body.appendChild(box);
+
+    // TweenMax.set(box, {transformPerspective: 200})
+
+    // box.addEventListener("click", function(){
+    //     TweenMax.to(box, 1, {rotationY: "+=180"})
+    // })
+
+    // Shared perspective
+    // TweenMax.set(document.body, {perspective: 200})
+
+    // Array.from({length: 30})
+    //     .map(function(){
+    //         return document.createElement("div");
+    //     })
+    //     .forEach(function(box){
+    //         box.classList.add("box");
+    //         document.body.appendChild(box);
+
+    //         box.addEventListener("click", function(){
+    //             if(!TweenMax.isTweening(box)){
+    //                 TweenMax.to(box, 1, {rotationY: "+=180"})
+    //             }
+    //         })
+    //     })
+
+    // yoyo animations
+    const box = document.createElement("div");
+    box.classList.add("box");
+    document.body.appendChild(box);
+
+    TweenMax.to(box, 1, {
+        scale: 1.25,
+        repeat: -1,
+        yoyo: true,
+        ease: Elastic.easeInOut
+    })
+</script>
+</html>
